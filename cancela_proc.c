@@ -6,12 +6,12 @@
 #include <sys/msg.h>
 #include <time.h>
  
- struct msgp{
+struct msgp{
  	long mtype;
  	time_t tempo;
  	int pid;
- 	int vezes;
- };
+    int vezes;
+};
 
 typedef struct msgp Buff;
 int main(int argc,char* argv[]){
