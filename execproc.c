@@ -18,7 +18,6 @@ struct msgp{
 	long mtype;
 	time_t tempo;
 	int pid;
-	int vezes;
 };
 typedef struct msgp Buff;
 
@@ -31,7 +30,7 @@ int main(int argc, char* argv[]){
 		exit(2);
 	}
 
-	/* Verificação para ver se o argumento de entreda é válido */
+	/* Verificação para ver se o argumento de entrada é válido */
 	if(argc<3){
 		printf("Quantidade de argumentos inválidos!\n");
 		exit(1);
@@ -72,10 +71,9 @@ int main(int argc, char* argv[]){
 		/* Alocação dinâmica para salvar mensagem na fila */
 		Buff* mensagem = (Buff*) malloc (sizeof(Buff*));
 
-		mensagem->mtype = atoi(argv[2]);
-		mensagem->pid = pid;
-		mensagem->vezes = 0;
-		mensagem->tempo = time(NULL);
+		(*mensagem).mtype = atoi(argv[2]);
+		(*mensagem).pid = pid;
+		(*mensagem).tempo = time(NULL);
 		msgsnd(idFilaAtual, mensagem, sizeof(Buff) - 4, 0);
 		printf("Mensagem enviada com sucesso!\n");
 		kill(pid, SIGTSTP);
