@@ -1,0 +1,8 @@
+Foram criados os seguintes programas:
+- execproc
+- cancela_proc
+- termina_execprocessod
+
+O arquivo execprocd.c contém apenas a parte de terminar o execprocessod e de cancelamento.
+
+Não conseguimos implementar o escalonador dos processos nem a criação das filas de mensagens.
