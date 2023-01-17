@@ -11,7 +11,6 @@ struct msgp{
 	long mtype;
 	time_t tempo;
 	int pid;
-	int vezes;
 };
 
 typedef struct msgp Buff;
@@ -28,8 +27,8 @@ int main(){
   
 	/* Caso encontrar idFilaAtual (msqid) */
 	Buff* mensagem = (Buff*)malloc(sizeof(Buff*));
-	mensagem->mtype = 9;	// Definição para que execprocd possa entender que recebeu a terminação de seu processo e poder parar.
-	mensagem->pid = 0;
+	(*mensagem).mtype = 9;	// Definição para que execprocd possa entender que recebeu a terminação de seu processo e poder parar.
+	(*mensagem).pid = 0;
 	msgsnd(idFilaAtual,mensagem,sizeof(Buff) - 4,0);	// o 0 aqui é para definir que é uma mensagem vazia, apenas uma indicação de ação para o execprocd
 	printf("Mensagem de terminar execprocd enviada! \n");
 	return 0;
