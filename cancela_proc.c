@@ -11,7 +11,6 @@ struct msgp{
 	long mtype;
 	time_t tempo;
 	int pid;
-	int vezes;
 };
 
 typedef struct msgp Buff;
