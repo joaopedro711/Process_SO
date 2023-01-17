@@ -3,6 +3,7 @@ Foram criados os seguintes programas:
 - cancela_proc
 - termina_execprocessod
 
-O arquivo execprocd.c contém apenas a parte de terminar o execprocessod e de cancelamento.
 
-Não conseguimos implementar o escalonador dos processos nem a criação das filas de mensagens.
+O arquivo execprocd.c contém apenas a parte de terminar o execprocessod e de cancelamento, a parte de separação dos processos e escalonamento provenientes das filas estava gerando um seg fault que não conseguimos identificar a tempo, porém a teoria da execução foi feita. 
+
+O escalonamento de processos via RR nao foi colocado no código final de envio com o proposito de conseguir rodar algo e termos pelo menos uma parte de criação de processos funcional com um processo de execução rodando background.
