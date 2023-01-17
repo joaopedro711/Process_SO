@@ -13,7 +13,7 @@
 #include <time.h>
 #include <signal.h>
 
-/* Struct para salvar dados */
+/* Struct para salvar estrutura da mensagem  */
 struct msgp{
 	long mtype;
 	time_t tempo;
